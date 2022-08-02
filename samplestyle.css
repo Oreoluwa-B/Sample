@@ -1,0 +1,138 @@
+:root {
+  --white-color: #fff;
+  --light-color: rgba(255, 255, 255, 0.88);
+  --dark-color: #333;
+  --primary-color: #00c6f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  appearance: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vw;
+  background: url("background.jpg") no-repeat center center/cover;
+}
+
+a {
+  color: var(--dark-color);
+  transition: all 200ms ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+nav {
+  font-family: poppins, san-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background: var(--white-color);
+  position: fixed;
+  width: 100%;
+  box-shadow: 0, 0.5rem 0.5rem rgba(255, 255, 255, 0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.8rem;
+  position: relative;
+}
+
+i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+i:hover {
+  color: var(--primary-color);
+}
+
+nav .container ul {
+  display: none;
+}
+
+nav input:checked ~ ul {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+nav ul li {
+  padding: 1.4rem;
+  background: var(--light-color);
+  cursor: pointer;
+  transition: all 200 ease;
+  animation: animaNavItems 1000ms ease;
+}
+
+nav ul li:hover {
+  background: var(--white-color);
+}
+
+nav ul li:first-child {
+  border-top: 1px solid var(--primary-color);
+}
+
+/* NAV ANIMATIONS */
+@keyframes animateNavItems {
+  0% {
+    opacity: o;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* MMEDIA QUERY FO RMEDIUM SCREENS */
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 0;
+  }
+
+  nav .container {
+    width: 80%;
+    padding: 0rem;
+  }
+  nav .container ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav input,
+  label {
+    display: none;
+  }
+
+  nav .container ul li {
+    background: transparent;
+  }
+}
+
+nav ul li:first-child {
+  border-top: 0;
+}
+
+/* Media Query */
+
+@media screen and (main-width: 992px) {
+  nav .container ul {
+    gap: 4rem;
+  }
+}
